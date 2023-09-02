@@ -6,7 +6,6 @@ import Hero from './Components/Hero';
 import What from './Components/What';
 import How from './Components/How';
 import Contact from './Components/Contact';
-import Portfolio from './Components/Portfolio';
 import './App.css'
 
 function App() {
@@ -14,7 +13,6 @@ function App() {
     <ChakraProvider  theme={theme}>
       <Navbar />
       <Hero />
-      <Portfolio />
       <What />
       <How />
       <Contact />
