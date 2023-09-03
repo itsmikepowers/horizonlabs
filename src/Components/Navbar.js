@@ -52,6 +52,7 @@ function Navbar() {
                     bg="rgba(255,255,255,0.1)" 
                     boxShadow="0px 4px 10px rgba(0,0,0,0.1)"
                     borderRadius="20px"
+                    backdropFilter="blur(5px)" 
                 >
                     <Flex alignItems="center">
                         <Link href="/" aria-label="home">
@@ -90,6 +91,7 @@ function Navbar() {
                         alignItems="center"
                         position={"fixed"}
                         transform={"translateY(-50%)"}
+                        backdropFilter="blur(5px)" 
                     >
                         <Link href="#What-you-get" fontWeight="medium" fontSize="xl">About</Link>
                         <Box width="30px" />
@@ -123,6 +125,7 @@ function Navbar() {
                         boxShadow="0px 4px 10px rgba(0,0,0,0.1)"
                         borderRadius="20px"
                         alignItems="center"
+                        backdropFilter="blur(5px)" 
                     >
                         <Link href="#What-you-get" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>About</Link>
                         <Link href="#Pricing" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>Services</Link>
