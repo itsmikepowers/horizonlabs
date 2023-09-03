@@ -1,36 +1,103 @@
-import React from 'react';
-import { Box, Heading, Text } from '@chakra-ui/react';
+import { Box, Image, Center, Text, Heading, useBreakpointValue } from "@chakra-ui/react";
+import { useInView } from 'react-intersection-observer';
 
-const What = () => (
-  <Box 
-    width="100%" 
-    backgroundColor="blue" 
-    display="flex" // Set this box as a flex container
-    alignItems="center" // Vertically center the inner box
-    justifyContent="center" // Horizontally center the inner box
-    pt='100px'
-    pb='100px'
-  >
-    <Box 
-      padding={['40px', '60px', '80px']} 
-      borderRadius="50px"
-      maxWidth="800px"
-      mx={['20px', '20px', '100px']} // Set horizontal margins. Adjust values as needed.
-      backgroundColor="white"
-    >
-      <Heading 
-        as="h2" 
-        size="xl" 
-        marginBottom="10"
-        textAlign="center"
-      >
-        What We Do
-      </Heading>
-      <Text fontSize="md">
-        Horizon Labs AI is an AI automation company dedicated to making a significant, positive impact on digital business. Rooted in the belief that technology should serve as an enabler of human potential, we focus on developing cutting-edge, empathetic AI solutions that streamline business processes, increase productivity, and foster sustainable growth.
-      </Text>
-    </Box>
-  </Box>
-);
+function What() {
+  const [refOne, inViewBlue] = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+
+  const [refTwo, inViewGreen] = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+
+  const [refThree, inViewRed] = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+
+  const flexDirection = useBreakpointValue({ base: "column", md: "row" });
+
+  return (
+    <Center minHeight="100vh" backgroundColor="#251a54">
+      <Box display="flex" flexDirection="column" alignItems="center" maxWidth="1000px" width="100%">
+        
+        {/* Header */}
+        <Box marginBottom="50px">
+          <Heading as="h1" color="white" size="2xl">What We Do</Heading>
+        </Box>
+
+        {/* Main Content */}
+        <Box display="flex" flexDirection={flexDirection} width="100%">
+          {/* Left Section */}
+          <Box width={{ base: "100%", md: "40%" }} padding="20px" display="flex" flexDirection="column">
+            
+            {/* Blue Box */}
+            <Box 
+                ref={refOne} 
+                opacity={inViewBlue ? 1 : 0} 
+                transition="opacity 1s ease-out, transform 0.3s ease-out" 
+                _hover={{ transform: 'scale(1.07)' }}
+                flex="1" 
+                backgroundColor="#202987" 
+                marginBottom="20px" 
+                borderRadius="20px" 
+                padding="30px" 
+                display="flex" 
+                flexDirection="column" 
+                justifyContent="center" 
+                alignItems="flex-start">
+                <Heading size="md" fontWeight="bold" color="white">Async process</Heading>
+                <Text color="gray.200">No meetings. We’ve been working for 5 years with clients without a single meeting. It works.</Text>
+            </Box>
+
+            {/* Green Box */}
+            <Box 
+                ref={refTwo} 
+                opacity={inViewGreen ? 1 : 0} 
+                transition="opacity 1s ease-out, transform 0.3s ease-out" 
+                _hover={{ transform: 'scale(1.07)' }}
+                flex="1" 
+                backgroundColor="#202987" 
+                marginBottom="20px" 
+                borderRadius="20px" 
+                padding="30px" 
+                display="flex" 
+                flexDirection="column" 
+                justifyContent="center" 
+                alignItems="flex-start">
+                <Heading size="md" fontWeight="bold" color="white">Manage with Trello</Heading>
+                <Text color="gray.200">Trello allows you to view all active, queued, and completed tasks with convenience.</Text>
+            </Box>
+
+            {/* Red Box */}
+            <Box 
+                ref={refThree} 
+                opacity={inViewRed ? 1 : 0} 
+                transition="opacity 1s ease-out, transform 0.3s ease-out" 
+                _hover={{ transform: 'scale(1.07)' }}
+                flex="1" 
+                backgroundColor="#202987" 
+                borderRadius="20px" 
+                padding="30px" 
+                display="flex" 
+                flexDirection="column" 
+                justifyContent="center" 
+                alignItems="flex-start">
+                <Heading size="md" fontWeight="bold" color="white">Unlimited team members</Heading>
+                <Text color="gray.200">Invite and enable them to submit design requests and track their progress.</Text>
+            </Box>
+          </Box>
+          
+          {/* Right Section */}
+          <Box width={{ base: "100%", md: "60%" }} padding="20px" marginTop={{ base: "20px", md: "0" }}>
+            <Image src="https://via.placeholder.com/150" alt="Stock Photo" width="100%" borderRadius="5px"/>
+          </Box>
+        </Box>
+      </Box>
+    </Center>
+  );
+}
 
 export default What;

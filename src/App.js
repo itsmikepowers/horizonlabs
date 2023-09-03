@@ -7,7 +7,6 @@ import What from './Components/What';
 import Contact from './Components/Contact';
 import './App.css'
 import Expertise from './Components/Expertise';
-import WhatWeDo from './Components/WhatWeDo';
 import Portfolio from './Components/Portfolio';
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
       <Navbar />
       <Hero />
       <What />
-      <WhatWeDo />
       <Expertise />
       <Portfolio />
       <Contact />

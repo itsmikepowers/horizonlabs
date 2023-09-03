@@ -10,16 +10,22 @@ const Portfolio = () => {
       paddingY="50px"
       zIndex={5}
       display="flex" 
-      flexDirection="column"   // Stack children vertically
-  alignItems="center" 
+      flexDirection="column" 
+      alignItems="center" 
     >
       {/* Header */}
       <Heading as="h1" color="white" size="2xl" textAlign="center" marginX="auto" maxWidth="1000px">
         Portfolio
       </Heading>
+
       <Box
         display="grid"
-        gridTemplateColumns={["repeat(1, 1fr)", "repeat(1, 1fr)", "repeat(3, 1fr)", "repeat(3, 1fr)"]}
+        gridTemplateColumns={[
+          "1fr",           // 1 column for smallest screens
+          "repeat(2, 1fr)", // 2 columns for slightly larger screens
+          "repeat(3, 1fr)", // 3 columns for medium and large screens
+          "repeat(3, 1fr)"  // Same as above for extra large screens
+        ]}
         gap={10}
         maxWidth="1000px"
         width="100%"
@@ -29,31 +35,20 @@ const Portfolio = () => {
         zIndex={5}
         justifyContent="center"
       >
-        <BoxItem
-          imageSrc="https://via.placeholder.com/300"
-        />
-        <BoxItem
-          imageSrc="https://via.placeholder.com/300"
-        />
-        <BoxItem
-          imageSrc="https://via.placeholder.com/300"
-        />
-        <BoxItem
-          imageSrc="https://via.placeholder.com/300"
-        />
-        <BoxItem
-          imageSrc="https://via.placeholder.com/300"
-        />
-        <BoxItem
-          imageSrc="https://via.placeholder.com/300"
-        />
+        <BoxItem imageSrc="https://via.placeholder.com/300" />
+        <BoxItem imageSrc="https://via.placeholder.com/300" />
+        <BoxItem imageSrc="https://via.placeholder.com/300" />
+        <BoxItem imageSrc="https://via.placeholder.com/300" />
+        <BoxItem imageSrc="https://via.placeholder.com/300" />
+        <BoxItem imageSrc="https://via.placeholder.com/300" />
       </Box>
+
       <Button 
         colorScheme="blackAlpha" 
         rightIcon={<Box as="span" display="inline-block" ml="8px" fontSize="32px" >{'>'}</Box>}
         padding="2rem 3rem"
         rounded="full"
-       >
+      >
         <Heading as="h2" size="md" fontWeight="bold">
           Full Portfolio
         </Heading>
@@ -62,14 +57,18 @@ const Portfolio = () => {
   );
 };
 
-const BoxItem = ({ icon, imageSrc }) => {
+const BoxItem = ({ imageSrc }) => {
   const [ref, inView] = useInView({
     threshold: 0.2,
     triggerOnce: true,
   });
 
   // Define the box size based on the breakpoint
-  const boxSize = useBreakpointValue({ base: '250px', md: '300px', lg: 'calc(1000px/3 - 20px)' });
+  const boxSize = useBreakpointValue({
+    base: '100%',   // Full width for smallest screens
+    md: '100%',     // Full width when there are 2 columns
+    lg: '100%'      // Full width when there are 3 columns
+  });
 
   return (
     <VStack
