@@ -34,7 +34,7 @@ function Navbar() {
     }, [isOpen, onClose]);
 
     return (
-        <Box bg="#151a54" p={8} color="white" minHeight={{ base: "125px", lg: "auto" }}>
+        <Box bg="#151a54" p={8} zIndex={9000} color="white" minHeight={{ base: "125px", lg: "auto" }}>
             <Flex maxWidth="1200px" mx="auto" width="100%" alignItems="center" justifyContent="space-between">
 
                 {/* Mobile Sticky Header */}
@@ -46,7 +46,7 @@ function Navbar() {
                     right={0} 
                     p={4} 
                     m={4} 
-                    zIndex={10} 
+                    zIndex={9000} 
                     alignItems="center" 
                     justifyContent="space-between"
                     bg="rgba(255,255,255,0.1)" 
@@ -92,6 +92,7 @@ function Navbar() {
                         position={"fixed"}
                         transform={"translateY(-50%)"}
                         backdropFilter="blur(5px)" 
+                        zIndex={9000} 
                     >
                         <Link href="#What-you-get" fontWeight="medium" fontSize="xl">About</Link>
                         <Box width="30px" />
@@ -120,7 +121,7 @@ function Navbar() {
                                 right="0"
                                 left={0} 
                                 width="70%"
-                                zIndex={10}
+                                zIndex={100}
                                 bg="rgba(255,255,255,0.1)"
                                 p={4}
                                 mx="auto"

@@ -10,6 +10,7 @@ const Expertise = () => {
       backgroundColor="#151a54"
       width="100%"
       paddingY="50px"
+      zIndex={5}
     >
       <Box
         display="grid"
@@ -20,6 +21,7 @@ const Expertise = () => {
         margin="0 auto"
         padding="5%"
         alignItems="stretch"
+        zIndex={5}
       >
         <BoxItem
           icon={<ReactIcon boxSize={8} />}
@@ -27,7 +29,7 @@ const Expertise = () => {
           description="Our team blends cutting-edge technologies with their vast experience to craft websites that are both visually appealing and functionally robust."
         />
         <BoxItem
-          icon={<AiOutlineRobot size="1.5em" />}
+          icon={<AiOutlineRobot size="2em" />}
           label="AI Automation"
           description="We design our AI solutions not just for automation, but to drive innovation and strategic insights."
         />
@@ -57,20 +59,21 @@ const BoxItem = ({ icon, label, description }) => {
       ref={ref}
       opacity={inView ? 1 : 0}
       transition="opacity 1s ease-out, transform 0.3s ease-out" 
-      _hover={{ transform: "scale(1.07)" }}
-      backgroundColor="white"
+      _hover={{ transform: "scale(1.07)", zIndex: 10 }}
+      backgroundColor="#202987"
       borderRadius="20px"
       padding="50px"
       alignItems="start"
       spacing={4}
       width="100%"
       height="100%"
+      zIndex={1}
     >
       <HStack spacing={2}>
-        {icon}
-        <Text fontSize="2xl" fontWeight="bold" color="black">{label}</Text>
+        {React.cloneElement(icon, { color: "white" })} 
+        <Text fontSize="2xl" fontWeight="bold" color="white">{label}</Text>
       </HStack>
-      <Text fontSize="md" color="gray.600" maxWidth="100%" lineHeight={1.6}>
+      <Text fontSize="md" color="gray.200" maxWidth="100%" lineHeight={1.6}>
         {description}
       </Text>
     </VStack>

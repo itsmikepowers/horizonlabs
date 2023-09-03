@@ -2,7 +2,7 @@ import { Box, Flex, Heading, Text, Button, Image } from '@chakra-ui/react';
 
 function Hero() {
   return (
-    <Box bg="gray.100" w="full" py={12}>
+    <Box bg="#172191" w="full" py={12}>
       <Flex
         direction={['column', 'column', 'row']}  // Stack on mobile and tablet, horizontal on larger screens
         maxW="1200px"
@@ -18,10 +18,10 @@ function Hero() {
           flex="1"  // Take up 50% of the space on larger screens
           textAlign={['center', 'center', 'left']}
         >
-          <Heading mb={4} fontSize="6xl" fontWeight="bold">
+          <Heading mb={4} fontSize="6xl" fontWeight="bold" color="white">
             Design Re-Imagined
           </Heading>
-          <Text mb={8} fontSize="3xl" color="gray.600">
+          <Text mb={8} fontSize="3xl" color="gray.200">
             Supercharging Your Business With Automated and AI Powered Solutions.
           </Text>
           <Button 
