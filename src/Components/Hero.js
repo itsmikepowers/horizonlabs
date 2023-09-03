@@ -19,7 +19,7 @@ function Hero() {
           textAlign={['center', 'center', 'left']}
         >
           <Heading mb={4} fontSize="6xl" fontWeight="bold">
-            Horizon Labs AI
+            Design Re-Imagined
           </Heading>
           <Text mb={8} fontSize="3xl" color="gray.600">
             Supercharging Your Business With Automated and AI Powered Solutions.

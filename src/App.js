@@ -7,6 +7,7 @@ import What from './Components/What';
 import How from './Components/How';
 import Contact from './Components/Contact';
 import './App.css'
+import Expertise from './Components/Expertise';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Navbar />
       <Hero />
       <What />
+      <Expertise />
       <How />
       <Contact />
     </ChakraProvider>
