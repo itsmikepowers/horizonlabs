@@ -4,10 +4,11 @@ import Navbar from './Components/Navbar';
 import theme from './theme'
 import Hero from './Components/Hero';
 import What from './Components/What';
-import How from './Components/How';
 import Contact from './Components/Contact';
 import './App.css'
 import Expertise from './Components/Expertise';
+import WhatWeDo from './Components/WhatWeDo';
+import Portfolio from './Components/Portfolio';
 
 function App() {
   return (
@@ -15,11 +16,21 @@ function App() {
       <Navbar />
       <Hero />
       <What />
+      <WhatWeDo />
       <Expertise />
-      <How />
+      <Portfolio />
       <Contact />
     </ChakraProvider>
   );
 }
 
 export default App;
+
+
+//hero
+//swipe with design examples
+//whatwedo
+//expertise
+//portfolio
+//testimonials
+//contact

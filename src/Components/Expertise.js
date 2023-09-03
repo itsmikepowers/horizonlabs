@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text, VStack, HStack } from '@chakra-ui/react';
+import { Box, Text, VStack, HStack, Heading } from '@chakra-ui/react';
 import { ReactIcon, EditIcon, LockIcon } from '@chakra-ui/icons';
 import { AiOutlineRobot } from 'react-icons/ai';
 import { useInView } from 'react-intersection-observer';
@@ -12,6 +12,11 @@ const Expertise = () => {
       paddingY="50px"
       zIndex={5}
     >
+
+    {/* Header */}
+    <Heading as="h1" color="white" size="2xl" textAlign="center" marginX="auto" maxWidth="1000px">
+        Our Expertise
+    </Heading>
       <Box
         display="grid"
         gridTemplateColumns={["repeat(1, 1fr)", "repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(2, 1fr)"]}
