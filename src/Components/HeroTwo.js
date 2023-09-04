@@ -7,7 +7,7 @@ const HeroTwo = () => {
   const centeredBoxRef = useRef(null);
 
   const stackWidth = useBreakpointValue({ base: "90%", sm: "70%", md: "50%", lg: "40%" });
-  const stackHeight = useBreakpointValue({ base: "75%", sm: "85%", md: "85%", lg: "85%" });
+  const stackHeight = useBreakpointValue({ base: "70vh", sm: "70vh", md: "80vh", lg: "80vh" });
   const headingSize = useBreakpointValue({ base: "4xl", sm: "4xl", md: "5xl", lg: "5xl" });
   const textSize = useBreakpointValue({ base: "xl", sm: "xl", md: "2xl", lg: "2xl" });
 
@@ -27,13 +27,13 @@ const HeroTwo = () => {
   }, []);
 
   return (
-    <Box bg="#151a54" h="80vh" w="100%">
+    <Box bg="#151a54" h={stackHeight} w="100%">
       <Center h="100%">
         <VStack 
           ref={centeredBoxRef}
           spacing="0" 
           w={stackWidth} 
-          h={stackHeight}
+          h="85%"
           transform={isVisible ? "translateY(0)" : "translateY(100%)"}
           opacity={isVisible ? 1 : 0}
           transition="opacity 3s, transform 2s"
