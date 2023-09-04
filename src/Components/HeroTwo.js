@@ -1,10 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Box, Center, VStack, Heading, Text, Flex, Circle, Button } from "@chakra-ui/react";
+import { Box, Center, VStack, Heading, Text, Flex, Circle, Button, useBreakpointValue } from "@chakra-ui/react";
 import buttonBackground from '../Assets/button.jpg';
 
 const HeroTwo = () => {
   const [isVisible, setIsVisible] = useState(false);
   const centeredBoxRef = useRef(null);
+
+  const stackWidth = useBreakpointValue({ base: "90%", sm: "70%", md: "50%", lg: "40%" });
+  const headingSize = useBreakpointValue({ base: "4xl", sm: "4xl", md: "5xl", lg: "5xl" });
+  const textSize = useBreakpointValue({ base: "xl", sm: "xl", md: "2xl", lg: "2xl" });
 
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
@@ -27,7 +31,7 @@ const HeroTwo = () => {
         <VStack 
           ref={centeredBoxRef}
           spacing="0" 
-          w="40%" 
+          w={stackWidth} 
           h="85%"
           transform={isVisible ? "translateY(0)" : "translateY(100%)"}
           opacity={isVisible ? 1 : 0}
@@ -43,10 +47,10 @@ const HeroTwo = () => {
           <Box bg="gray.800" w="100%" flex="1">
             <Center h="100%">
               <VStack>
-                <Heading as="h1" fontSize="5xl" fontWeight="bold" textAlign="center" color="white">
+                <Heading as="h1" fontSize={headingSize} fontWeight="bold" textAlign="center" color="white">
                   Digital <br /> Re-Imagined
                 </Heading>
-                <Text fontSize="2xl" textAlign="center" color="gray.200">
+                <Text fontSize={textSize} textAlign="center" color="gray.200">
                   Websites, Automation, and AI <br /> To Supercharge Your Business
                 </Text>
                 <Flex mt={4} spacing={4}>
