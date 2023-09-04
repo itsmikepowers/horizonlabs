@@ -7,19 +7,19 @@ import Contact from './Components/Contact';
 import './App.css'
 import Expertise from './Components/Expertise';
 import Portfolio from './Components/Portfolio';
-import HeroTwo from './Components/HeroTwo';
+import Hero from './Components/Hero';
 import Testimonial from './Components/Testimonial';
 
 function App() {
   return (
     <ChakraProvider  theme={theme}>
       <Navbar />
-      <HeroTwo />
+      <Hero />
       <What />
       <Expertise />
       <Portfolio />
-      <Contact />
       <Testimonial />
+      <Contact />
     </ChakraProvider>
   );
 }
