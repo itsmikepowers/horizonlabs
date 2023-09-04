@@ -1,43 +1,19 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { Box, Center, VStack, Heading, Text, Flex, Circle, Button, useBreakpointValue } from "@chakra-ui/react";
 import buttonBackground from '../Assets/button.jpg';
 
 const HeroTwo = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const centeredBoxRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(true); // Set initial state to true
 
   const stackWidth = useBreakpointValue({ base: "90%", sm: "70%", md: "50%", lg: "40%" });
   const stackHeight = useBreakpointValue({ base: "70vh", sm: "70vh", md: "80vh", lg: "80vh" });
   const headingSize = useBreakpointValue({ base: "4xl", sm: "4xl", md: "5xl", lg: "5xl" });
   const textSize = useBreakpointValue({ base: "xl", sm: "xl", md: "2xl", lg: "2xl" });
 
-  useEffect(() => {
-    const observerOptions = {
-      root: null, // Default is the viewport
-      rootMargin: '0px 0px -1% 0px', // This sets a margin at the bottom. Adjust as needed.
-      threshold: [0, 0.25, 0.5, 0.75, 1] // This will trigger the callback at different visibility thresholds
-    };
-
-    const observer = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) {
-        setIsVisible(true);
-        observer.disconnect();
-      }
-    }, observerOptions);
-
-    if (centeredBoxRef.current) {
-      observer.observe(centeredBoxRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-
   return (
     <Box bg="#151a54" h={stackHeight} w="100%">
       <Center h="100%">
         <VStack 
-          ref={centeredBoxRef}
           spacing="0" 
           w={stackWidth} 
           h="85%"
