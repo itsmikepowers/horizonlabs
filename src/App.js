@@ -8,6 +8,7 @@ import './App.css'
 import Expertise from './Components/Expertise';
 import Portfolio from './Components/Portfolio';
 import HeroTwo from './Components/HeroTwo';
+import Testimonial from './Components/Testimonial';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Expertise />
       <Portfolio />
       <Contact />
+      <Testimonial />
     </ChakraProvider>
   );
 }
