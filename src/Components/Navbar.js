@@ -110,33 +110,33 @@ function Navbar() {
                 </Box>
 
                 {/* Mobile Menu */}
-                        <Flex
-                            direction="column"
-                            position={"fixed"}
-                            top="125px"
-                            right="0"
-                            left={0} 
-                            width="70%"
-                            zIndex={9000}
-                            bg="rgba(255,255,255,0.1)"
-                            p={4}
-                            mx="auto"
-                            boxShadow="0px 4px 10px rgba(0,0,0,0.1)"
-                            borderRadius="20px"
-                            alignItems="center"
-                            backdropFilter="blur(5px)" 
-                            opacity={isOpen ? 1 : 0} // Control the visibility with opacity
-                            transition="opacity 0.3s ease" // This will make it fade in/out smoothly
-                            pointerEvents={isOpen ? "auto" : "none"} // Disable events when the menu isn't visible
-                        >
-                            <Link href="#What-you-get" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>About</Link>
-                            <Link href="#Pricing" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>Services</Link>
-                            <Link href="#last-projects" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>Portfolio</Link>
-                            <Link href="#Testimonial" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>Testimonial</Link>
-                            <Button as="a" target="_blank" colorScheme="blue" size="xl" borderRadius="20px" fontSize="xl" p={4} onClick={onClose}> 
-                                Contact
-                            </Button>
-                        </Flex>
+                <Flex
+                    direction="column"
+                    position={"fixed"}
+                    top="125px"
+                    right="0"
+                    left={0} 
+                    width="70%"
+                    zIndex={9000}
+                    bg="rgba(255,255,255,0.1)"
+                    p={4}
+                    mx="auto"
+                    boxShadow="0px 4px 10px rgba(0,0,0,0.1)"
+                    borderRadius="20px"
+                    alignItems="center"
+                    backdropFilter="blur(5px)" 
+                    opacity={isOpen ? 1 : 0} // Control the visibility with opacity
+                    transition="opacity 0.3s ease" // This will make it fade in/out smoothly
+                    pointerEvents={isOpen ? "auto" : "none"} // Disable events when the menu isn't visible
+                >
+                    <Link href="#What-you-get" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>About</Link>
+                    <Link href="#Pricing" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>Services</Link>
+                    <Link href="#last-projects" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>Portfolio</Link>
+                    <Link href="#Testimonial" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>Testimonial</Link>
+                    <Button as="a" target="_blank" colorScheme="blue" size="xl" borderRadius="20px" fontSize="xl" p={4} onClick={onClose}> 
+                        Contact
+                    </Button>
+                </Flex>
             </Flex>
         </Box>
     );
