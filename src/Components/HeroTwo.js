@@ -12,12 +12,18 @@ const HeroTwo = () => {
   const textSize = useBreakpointValue({ base: "xl", sm: "xl", md: "2xl", lg: "2xl" });
 
   useEffect(() => {
+    const observerOptions = {
+      root: null, // Default is the viewport
+      rootMargin: '0px 0px -10% 0px', // This sets a margin at the bottom. Adjust as needed.
+      threshold: [0, 0.25, 0.5, 0.75, 1] // This will trigger the callback at different visibility thresholds
+    };
+
     const observer = new IntersectionObserver(entries => {
       if (entries[0].isIntersecting) {
         setIsVisible(true);
         observer.disconnect();
       }
-    });
+    }, observerOptions);
 
     if (centeredBoxRef.current) {
       observer.observe(centeredBoxRef.current);
@@ -25,6 +31,7 @@ const HeroTwo = () => {
 
     return () => observer.disconnect();
   }, []);
+
 
   return (
     <Box bg="#151a54" h={stackHeight} w="100%">
