@@ -12,18 +12,12 @@ const HeroTwo = () => {
   const textSize = useBreakpointValue({ base: "xl", sm: "xl", md: "2xl", lg: "2xl" });
 
   useEffect(() => {
-    const observerOptions = {
-      root: null, // relative to document viewport
-      rootMargin: '-10px', // margin around root. Values are similar to css property. Unitless values not allowed
-      threshold: 0.1 // visible amount of item shown in relation to root
-    };
-
     const observer = new IntersectionObserver(entries => {
       if (entries[0].isIntersecting) {
         setIsVisible(true);
         observer.disconnect();
       }
-    }, observerOptions);
+    });
 
     if (centeredBoxRef.current) {
       observer.observe(centeredBoxRef.current);
