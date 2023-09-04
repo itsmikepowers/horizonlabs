@@ -14,7 +14,7 @@ const HeroTwo = () => {
   useEffect(() => {
     const observerOptions = {
       root: null, // relative to document viewport
-      rootMargin: '-100px', // margin around root. Values are similar to css property. Unitless values not allowed
+      rootMargin: '-10px', // margin around root. Values are similar to css property. Unitless values not allowed
       threshold: 0.1 // visible amount of item shown in relation to root
     };
 
