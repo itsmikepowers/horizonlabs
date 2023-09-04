@@ -1,14 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Center, VStack, Heading, Text, Flex, Circle, Button, useBreakpointValue } from "@chakra-ui/react";
 import buttonBackground from '../Assets/button.jpg';
 
 const HeroTwo = () => {
-  const [isVisible, setIsVisible] = useState(true); // Set initial state to true
+  const [isVisible, setIsVisible] = useState(false);
 
   const stackWidth = useBreakpointValue({ base: "90%", sm: "70%", md: "50%", lg: "40%" });
   const stackHeight = useBreakpointValue({ base: "70vh", sm: "70vh", md: "80vh", lg: "80vh" });
   const headingSize = useBreakpointValue({ base: "4xl", sm: "4xl", md: "5xl", lg: "5xl" });
   const textSize = useBreakpointValue({ base: "xl", sm: "xl", md: "2xl", lg: "2xl" });
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 100); // 100ms delay, adjust as needed
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <Box bg="#151a54" h={stackHeight} w="100%">
