@@ -2,6 +2,9 @@ import { Box, Image, Center, Text, Heading, useBreakpointValue } from "@chakra-u
 import { useInView } from 'react-intersection-observer';
 
 function What() {
+
+  const headerMarginBottom = useBreakpointValue({ base: "10px", md: "50px" });
+
   const [refOne, inViewBlue] = useInView({
     threshold: 0.2,
     triggerOnce: true,
@@ -20,11 +23,11 @@ function What() {
   const flexDirection = useBreakpointValue({ base: "column", md: "row" });
 
   return (
-    <Center minHeight="100vh" backgroundColor="#251a54">
+    <Center minHeight="100vh" backgroundColor="#151a54">
       <Box display="flex" flexDirection="column" alignItems="center" maxWidth="1000px" width="100%">
         
         {/* Header */}
-        <Box marginBottom="50px">
+        <Box marginBottom={headerMarginBottom}>
           <Heading as="h1" color="white" size="2xl">What We Do</Heading>
         </Box>
 

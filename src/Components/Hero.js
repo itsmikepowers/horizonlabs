@@ -49,6 +49,7 @@ const Hero = () => {
                   <Button 
                     color="white" 
                     variant="outline" 
+                    border="2px solid white" 
                     size="lg" 
                     mr={5} 
                     borderRadius="20px"

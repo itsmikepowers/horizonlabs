@@ -4,11 +4,12 @@ import Navbar from './Components/Navbar';
 import theme from './theme'
 import What from './Components/What';
 import Contact from './Components/Contact';
-import './App.css'
 import Expertise from './Components/Expertise';
 import Portfolio from './Components/Portfolio';
 import Hero from './Components/Hero';
 import Testimonial from './Components/Testimonial';
+import Horizon from './Components/Horizon';
+import './App.css'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Portfolio />
       <Testimonial />
       <Contact />
+      <Horizon />
     </ChakraProvider>
   );
 }
