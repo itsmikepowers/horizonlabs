@@ -14,7 +14,7 @@ const HeroTwo = () => {
   useEffect(() => {
     const observerOptions = {
       root: null, // Default is the viewport
-      rootMargin: '0px 0px -10% 0px', // This sets a margin at the bottom. Adjust as needed.
+      rootMargin: '0px 0px 0px 0px', // This sets a margin at the bottom. Adjust as needed.
       threshold: [0, 0.25, 0.5, 0.75, 1] // This will trigger the callback at different visibility thresholds
     };
 
