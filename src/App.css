@@ -1,34 +1,31 @@
 /* @keyframes colorChangeOrange {
-    0% { background-color: #ff9050; }
-    25% { background-color: #25b6f2; }
-    50% { background-color: #fb4f59; }
-    75% { background-color: #4e2474; }
-    100% { background-color: #ff9050; }
+  0%, 100% { background-color: #ff9050; }
+  25% { background-color: #25b6f2; }
+  50% { background-color: #fb4f59; }
+  75% { background-color: #4e2474; }
 }
 
 @keyframes colorChangeBlue {
-    0% { background-color: #25b6f2; }
-    25% { background-color: #fb4f59; }
-    50% { background-color: #4e2474; }
-    75% { background-color: #ff9050; }
-    100% { background-color: #25b6f2; }
+  0%, 100% { background-color: #25b6f2; }
+  25% { background-color: #fb4f59; }
+  50% { background-color: #4e2474; }
+  75% { background-color: #ff9050; }
 }
 
 @keyframes colorChangeRed {
-    0% { background-color: #fb4f59; }
-    25% { background-color: #4e2474; }
-    50% { background-color: #ff9050; }
-    75% { background-color: #25b6f2; }
-    100% { background-color: #fb4f59; }
+  0%, 100% { background-color: #fb4f59; }
+  25% { background-color: #4e2474; }
+  50% { background-color: #ff9050; }
+  75% { background-color: #25b6f2; }
 }
 
 @keyframes colorChangePurple {
-    0% { background-color: #4e2474; }
-    25% { background-color: #ff9050; }
-    50% { background-color: #25b6f2; }
-    75% { background-color: #fb4f59; }
-    100% { background-color: #4e2474; }
+  0%, 100% { background-color: #4e2474; }
+  25% { background-color: #ff9050; }
+  50% { background-color: #25b6f2; }
+  75% { background-color: #fb4f59; }
 } */
+
 
 .background-component {
     position: relative;
