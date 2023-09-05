@@ -1,0 +1,19 @@
+.randomDotsContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place it behind other content */
+    overflow: hidden; /* Ensure it doesn't expand the width of the page */
+    background-color: #151a54;
+}
+
+.randomDot {
+    position: absolute;
+    width: 800px;  /* You can adjust the size if needed */
+    height: 800px;
+    border-radius: 50%; /* Makes the dot circular */
+    filter: blur(200px);
+    opacity: 0.6;
+}
