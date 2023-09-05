@@ -30,9 +30,8 @@
     100% { background-color: #4e2474; }
 } */
 
-.background-component {
-    position: relative; /* Ensure the component has relative positioning */
-    /* Other styles for your component */
+/* .background-component {
+    position: relative;
   }
   
   .background-component::before {
@@ -45,4 +44,4 @@
     background: linear-gradient(to bottom, rgba(21, 26, 84, 0), #151a54); 
     z-index: 1;
   }
-  
+   */

@@ -12,7 +12,7 @@ const ColoredCircle = ({ width, height, bgColor, top, left, filterBlur, animatio
         top={top}
         left={left}
         transform="translate(-50%, -50%)"
-        filter={`blur(${filterBlur})`}
+        // filter={`blur(${filterBlur})`}
         // animation={`${animationName} 12s infinite`}
     />
 );
