@@ -33,7 +33,7 @@ function Navbar() {
     }, [isOpen, onClose]);
 
     return (
-        <Box bg="transparent" p={8} zIndex={9000} color="white" minHeight={{ base: "125px", lg: "auto" }}>
+        <Box bg="transparent" p={8} zIndex={3000} color="white" minHeight={{ base: "125px", lg: "auto" }}>
             <Flex maxWidth="1200px" mx="auto" width="100%" alignItems="center" justifyContent="space-between">
 
                 {/* Mobile Sticky Header */}
@@ -71,7 +71,7 @@ function Navbar() {
                 </Flex>
 
                 {/* Desktop Logo */}
-                <Flex display={{ base: "none", lg: "flex" }} alignItems="center">
+                <Flex zIndex={1000} display={{ base: "none", lg: "flex" }} alignItems="center">
                     <Link href="/" aria-label="home">
                         <Image src={logo} alt="logo" width="60px" height="60px" />
                     </Link>

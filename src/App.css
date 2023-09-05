@@ -30,16 +30,6 @@
     100% { background-color: #4e2474; }
 }
 
-@keyframes movePurpleDot {
-    0%, 100% { left: 20%; }
-    50% { left: 40%; }
-}
-
-@keyframes moveRedDot {
-    0%, 100% { left: 90%; }
-    50% { left: 70%; }
-}
-
 .background-component {
     position: relative; /* Ensure the component has relative positioning */
     /* Other styles for your component */
