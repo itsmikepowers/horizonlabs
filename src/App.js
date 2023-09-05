@@ -27,15 +27,3 @@ function App() {
 }
 
 export default App;
-
-
-//hero
-//swipe with design examples
-//whatwedo
-//expertise
-//portfolio
-//testimonials
-//contact
-
-//websites, automation, ai that 
-//supercharges your business

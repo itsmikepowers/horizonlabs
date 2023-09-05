@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 const Portfolio = () => {
   return (
     <Box
-      backgroundColor="#351a54"
+      backgroundColor="#151a54"
       width="100%"
       paddingY="50px"
       zIndex={5}
@@ -44,7 +44,7 @@ const Portfolio = () => {
       </Box>
 
       <Button 
-        colorScheme="blackAlpha" 
+        colorScheme="blue"
         rightIcon={<Box as="span" display="inline-block" ml="8px" fontSize="32px" >{'>'}</Box>}
         padding="2rem 3rem"
         rounded="full"
