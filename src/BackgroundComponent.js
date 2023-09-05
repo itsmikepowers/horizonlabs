@@ -12,7 +12,7 @@ const ColoredCircle = ({ width, height, bgColor, top, left, filterBlur, animatio
         top={top}
         left={left}
         transform="translate(-50%, -50%)"
-        filter={`blur(${filterBlur})`}
+        style={{ filter: 'url(#svgBlur)' }}
         // animation={`${animationName} 12s infinite`}
     />
 );
@@ -29,6 +29,11 @@ const BackgroundComponent = ({ children }) => {
             <Box zIndex={3}>
                 {children}
             </Box>
+            <svg style={{ height: '0', width: '0', position: 'absolute' }}>
+                <filter id="svgBlur" x="-200%" y="-200%" width="400%" height="400%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="100" />
+                </filter>
+            </svg>
         </Box>
     );
 }
