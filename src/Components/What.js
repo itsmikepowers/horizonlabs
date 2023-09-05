@@ -24,7 +24,7 @@ function What() {
 
   return (
     <Center minHeight="100vh" backgroundColor="transparent">
-      <Box display="flex" flexDirection="column" alignItems="center" maxWidth="1000px" width="100%">
+      <Box zIndex={10} display="flex" flexDirection="column" alignItems="center" maxWidth="1000px" width="100%">
         
         {/* Header */}
         <Box marginBottom={headerMarginBottom}>
