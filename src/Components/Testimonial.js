@@ -67,7 +67,7 @@ function Testimonial() {
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        padding="50px"
+        padding="30px"
       >
 
         <Text color="white" fontSize="2xl" textAlign="center" mb="4">
