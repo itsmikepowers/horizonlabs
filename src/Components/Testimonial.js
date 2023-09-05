@@ -51,7 +51,7 @@ function Testimonial() {
   });
 
   return (
-    <Flex direction="column" align="center" justify="center" h={containerHeight} bg="#151a54">
+    <Flex direction="column" align="center" justify="center" h={containerHeight} bg="transparent">
 
       <Heading as="h1" color="white" size="2xl" textAlign="center" mb="50px">
         Testimonials

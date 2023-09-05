@@ -19,7 +19,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <Box bg="#151a54" h={stackHeight} w="100%">
+    <Box bg="transparent" h={stackHeight} w="100%">
       <Center h="100%">
         <VStack 
           spacing="0" 

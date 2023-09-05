@@ -33,7 +33,7 @@ function Navbar() {
     }, [isOpen, onClose]);
 
     return (
-        <Box bg="#151a54" p={8} zIndex={9000} color="white" minHeight={{ base: "125px", lg: "auto" }}>
+        <Box bg="transparent" p={8} zIndex={9000} color="white" minHeight={{ base: "125px", lg: "auto" }}>
             <Flex maxWidth="1200px" mx="auto" width="100%" alignItems="center" justifyContent="space-between">
 
                 {/* Mobile Sticky Header */}

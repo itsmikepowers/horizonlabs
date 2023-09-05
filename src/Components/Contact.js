@@ -13,7 +13,7 @@ import buttonBackground from '../Assets/button.jpg';
 
 function Contact() {
   return (
-    <Box py="100px" bg="#151a54" width="100%">
+    <Box py="100px" bg="transparent" width="100%">
       <Container maxW="1200px">
         <HStack
           spacing={10}

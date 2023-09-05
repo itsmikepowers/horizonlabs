@@ -2,7 +2,7 @@ import { Box, Container, Text, Link } from "@chakra-ui/react";
 
 function Horizon() {
   return (
-    <Box width="100%" bg="#151a54" color="white" py={2}>
+    <Box width="100%" bg="transparent" color="white" py={4}>
       <Container
         maxWidth="1200px"
         display="flex"
