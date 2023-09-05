@@ -13,7 +13,7 @@ const Hero = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 100); // 100ms delay, adjust as needed
+    }, 500); // 100ms delay, adjust as needed
 
     return () => clearTimeout(timer);
   }, []);
