@@ -21,10 +21,10 @@ const BackgroundComponent = ({ children }) => {
     return (
         <Box className="background-component" pos="relative" w="100%" h="100vh" >
             <Box w="100%" h="100vh" pos="absolute" top={0} left={0} zIndex={0} overflow="hidden">
-                <ColoredCircle width="700px" height="700px" bgColor="#ff9050" top="60%" left="20%" filterBlur="70px" animationName="colorChangeOrange" />
-                <ColoredCircle width="900px" height="900px" bgColor="#25b6f2" top="30%" left="70%" filterBlur="70px" animationName="colorChangeBlue" />
-                <ColoredCircle width="800px" height="800px" bgColor="#fb4f59" top="70%" left="90%" filterBlur="70px" animationName="colorChangeRed" />
-                <ColoredCircle width="700px" height="700px" bgColor="#4e2474" top="15%" left="40%" filterBlur="70px" animationName="colorChangePurple" />
+                <ColoredCircle width="700px" height="700px" bgColor="#ff9050" top="60%" left="20%" filterBlur="40px" animationName="colorChangeOrange" />
+                <ColoredCircle width="900px" height="900px" bgColor="#25b6f2" top="30%" left="70%" filterBlur="40px" animationName="colorChangeBlue" />
+                <ColoredCircle width="800px" height="800px" bgColor="#fb4f59" top="70%" left="90%" filterBlur="40px" animationName="colorChangeRed" />
+                <ColoredCircle width="700px" height="700px" bgColor="#4e2474" top="15%" left="40%" filterBlur="40px" animationName="colorChangePurple" />
             </Box>
             <Box zIndex={3}>
                 {children}
