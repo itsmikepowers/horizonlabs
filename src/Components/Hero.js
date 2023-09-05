@@ -28,6 +28,7 @@ const Hero = () => {
           transform={isVisible ? "translateY(0)" : "translateY(100%)"}
           opacity={isVisible ? 1 : 0}
           transition="opacity 3s, transform 2s"
+          zIndex={10}
         >
           <Box bg="gray.900" w="100%" h="40px" borderTopRadius="20px">
             <Flex justifyContent="flex-start" alignItems="center" paddingLeft="5" h="100%">

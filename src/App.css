@@ -1,0 +1,58 @@
+@keyframes colorChangeOrange {
+    0% { background-color: #ff9050; }
+    25% { background-color: #25b6f2; }
+    50% { background-color: #fb4f59; }
+    75% { background-color: #4e2474; }
+    100% { background-color: #ff9050; }
+}
+
+@keyframes colorChangeBlue {
+    0% { background-color: #25b6f2; }
+    25% { background-color: #fb4f59; }
+    50% { background-color: #4e2474; }
+    75% { background-color: #ff9050; }
+    100% { background-color: #25b6f2; }
+}
+
+@keyframes colorChangeRed {
+    0% { background-color: #fb4f59; }
+    25% { background-color: #4e2474; }
+    50% { background-color: #ff9050; }
+    75% { background-color: #25b6f2; }
+    100% { background-color: #fb4f59; }
+}
+
+@keyframes colorChangePurple {
+    0% { background-color: #4e2474; }
+    25% { background-color: #ff9050; }
+    50% { background-color: #25b6f2; }
+    75% { background-color: #fb4f59; }
+    100% { background-color: #4e2474; }
+}
+
+@keyframes movePurpleDot {
+    0%, 100% { left: 20%; }
+    50% { left: 40%; }
+}
+
+@keyframes moveRedDot {
+    0%, 100% { left: 90%; }
+    50% { left: 70%; }
+}
+
+.background-component {
+    position: relative; /* Ensure the component has relative positioning */
+    /* Other styles for your component */
+  }
+  
+  .background-component::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(21, 26, 84, 0), #151a54); 
+    z-index: 1;
+  }
+  
