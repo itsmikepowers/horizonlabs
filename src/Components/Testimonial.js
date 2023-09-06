@@ -1,27 +1,39 @@
 import { Box, Flex, Heading, Button, Text, useBreakpointValue, Stack } from "@chakra-ui/react";
 import React, { useState } from "react";
+import { useInView } from 'react-intersection-observer';
 
 const TESTIMONIAL_DATA = [
   {
-    text: "Working with the team has been a transformative experience. The dedication and expertise here are unparalleled, and it has allowed us to tackle challenges head-on.",
+    text: "\"Working with the team has been a transformative experience. The dedication and expertise here are unparalleled, and it has allowed us to tackle challenges head-on.\"",
     name: "Kathy Powers",
     position: "Software Engineer"
   },
   {
-    text: "The collaboration and vision of this company are what sets it apart. Every project is an opportunity, and with the team's support, success is always within reach.",
+    text: "\"The collaboration and vision of this company are what sets it apart. Every project is an opportunity, and with the team's support, success is always within reach.\"",
     name: "John Doe",
     position: "Product Manager"
   },
   {
-    text: "In the realm of design, it's rare to find a place that values innovation and user experience equally. Here, I've found a balance that drives excellence in every project.",
+    text: "\"In the realm of design, it's rare to find a place that values innovation and user experience equally. Here, I've found a balance that drives excellence in every project.\"",
     name: "Test Person", 
     position: "UI/UX Designer"
   }
 ];
 
 function Testimonial() {
-
   const [currentTestimonial, setCurrentTestimonial] = useState(TESTIMONIAL_DATA[0]);
+
+  // For the main testimonial box
+  const [testimonialRef, testimonialInView] = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+
+  // For the individual person boxes
+  const [personRef, personInView] = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
 
   const containerWidth = "90%";
 
@@ -34,12 +46,12 @@ function Testimonial() {
     base: "200px",
     md: "100px"
   });
-  
+
   const buttonPadding = useBreakpointValue({
     base: "4",
     md: "2"
   });
-   
+
   const buttonTextAlign = useBreakpointValue({
     base: "center",
     md: "left"
@@ -58,6 +70,9 @@ function Testimonial() {
       </Heading>
 
       <Box
+        ref={testimonialRef}
+        opacity={testimonialInView ? 1 : 0}
+        transition="opacity 1s ease-out"
         bg="#202987"
         w={containerWidth}
         maxW="800px"
@@ -70,7 +85,7 @@ function Testimonial() {
         padding="30px"
       >
 
-        <Text color="white" fontSize="2xl" textAlign="center" mb="4">
+        <Text  fontStyle="italic" fontWeight="100" color="gray.200" fontSize="2xl" textAlign="center" mb="4">
           {currentTestimonial.text}
         </Text>
 
@@ -96,6 +111,9 @@ function Testimonial() {
 
         {TESTIMONIAL_DATA.map(testimonial => (
           <Button
+            ref={personRef}
+            opacity={personInView ? 1 : 0}
+            transition="opacity 1s ease-out"
             key={testimonial.name} 
             height={buttonHeight}
             padding={buttonPadding}
@@ -123,7 +141,6 @@ function Testimonial() {
 
     </Flex>
   );
-
 }
 
 export default Testimonial;

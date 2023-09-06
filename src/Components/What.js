@@ -40,8 +40,9 @@ function What() {
             <Box 
                 ref={refOne} 
                 opacity={inViewBlue ? 1 : 0} 
-                transition="opacity 1s ease-out, transform 0.3s ease-out" 
-                _hover={{ transform: 'scale(1.07)' }}
+                transition="opacity 1s ease-out, transform 0.3s ease-out, box-shadow 0.2s ease-out"
+                _hover={{ transform: "scale(1.07)", zIndex: 10, boxShadow: "10px 10px 15px rgba(0, 0, 0, 0.2)" }}
+                background="linear-gradient(to bottom right, #202987, #151a54)"
                 flex="1" 
                 backgroundColor="#202987" 
                 marginBottom="20px" 
@@ -59,8 +60,9 @@ function What() {
             <Box 
                 ref={refTwo} 
                 opacity={inViewGreen ? 1 : 0} 
-                transition="opacity 1s ease-out, transform 0.3s ease-out" 
-                _hover={{ transform: 'scale(1.07)' }}
+                transition="opacity 1s ease-out, transform 0.3s ease-out, box-shadow 0.2s ease-out"
+                _hover={{ transform: "scale(1.07)", zIndex: 10, boxShadow: "10px 10px 15px rgba(0, 0, 0, 0.2)" }}
+                background="linear-gradient(to bottom right, #202987, #151a54)"
                 flex="1" 
                 backgroundColor="#202987" 
                 marginBottom="20px" 
@@ -78,8 +80,9 @@ function What() {
             <Box 
                 ref={refThree} 
                 opacity={inViewRed ? 1 : 0} 
-                transition="opacity 1s ease-out, transform 0.3s ease-out" 
-                _hover={{ transform: 'scale(1.07)' }}
+                transition="opacity 1s ease-out, transform 0.3s ease-out, box-shadow 0.2s ease-out"
+                _hover={{ transform: "scale(1.07)", zIndex: 10, boxShadow: "10px 10px 15px rgba(0, 0, 0, 0.2)" }}
+                background="linear-gradient(to bottom right, #202987, #151a54)"
                 flex="1" 
                 backgroundColor="#202987" 
                 borderRadius="20px" 

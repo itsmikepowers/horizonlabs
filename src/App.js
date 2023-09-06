@@ -9,7 +9,7 @@ import Portfolio from './Components/Portfolio';
 import Hero from './Components/Hero';
 import Testimonial from './Components/Testimonial';
 import Horizon from './Components/Horizon';
-import BackgroundComponent from './BackgroundComponent';  // Update the path if saved elsewhere
+import BackgroundComponent from './Components/BackgroundComponent';  // Update the path if saved elsewhere
 import './App.css';
 
 function App() {

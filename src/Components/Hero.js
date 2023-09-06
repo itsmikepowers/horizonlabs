@@ -69,7 +69,7 @@ const Hero = () => {
                     borderRadius="20px"
                     style={{
                       backgroundImage: `url(${buttonBackground})`,
-                      backgroundSize: '100%',
+                      backgroundSize: '120%',
                       backgroundPosition: 'center',
                     }}
                     transition="transform 0.3s" 

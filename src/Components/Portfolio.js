@@ -74,8 +74,8 @@ const BoxItem = ({ imageSrc }) => {
     <VStack
       ref={ref}
       opacity={inView ? 1 : 0}
-      transition="opacity 1s ease-out, transform 0.3s ease-out" 
-      _hover={{ transform: "scale(1.07)", zIndex: 10 }}
+      transition="opacity 1s ease-out, transform 0.3s ease-out, box-shadow 0.2s ease-out"
+      _hover={{ transform: "scale(1.07)", zIndex: 10, boxShadow: "10px 10px 15px rgba(0, 0, 0, 0.2)" }}
       backgroundColor="#202987"
       borderRadius="20px"
       padding="50px"
