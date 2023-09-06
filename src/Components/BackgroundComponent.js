@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@chakra-ui/react';
 import { useSpring, animated } from 'react-spring';
 
-const colors = ["#ff9050", "#25b6f2", "#fb4f59", "#4e2474"];
+const colors = ["#ff9050", "#25b6f2", "#fb4f59", "#8013ac"];
 const ColoredCircle = ({ width, height, initialColor, top, left }) => {
     const [{ bgColor }, set] = useSpring(() => ({
       bgColor: initialColor,
@@ -64,7 +64,7 @@ const BackgroundComponent = ({ children }) => {
         <ColoredCircle
           width="1200px"
           height="1200px" 
-          initialColor="#4e2474"
+          initialColor="#8013ac"
           top="15%"
           left="40%"
         />

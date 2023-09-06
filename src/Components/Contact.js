@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Box,
   Heading,
@@ -10,24 +9,11 @@ import {
   Button,
   Container,
 } from "@chakra-ui/react";
-import { useInView } from 'react-intersection-observer';
 import buttonBackground from '../Assets/button.jpg';
 
 function Contact() {
-  const [ref, inView] = useInView({
-    threshold: 0.2,
-    triggerOnce: true,
-  });
-
   return (
-    <Box 
-      py="100px" 
-      bg="transparent" 
-      width="100%" 
-      ref={ref}
-      opacity={inView ? 1 : 0}
-      transition="opacity 1s ease-out"
-    >
+    <Box py="100px" bg="transparent" width="100%">
       <Container maxW="1200px">
         <HStack
           spacing={10}
