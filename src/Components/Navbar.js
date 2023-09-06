@@ -10,7 +10,7 @@ import {
     useDisclosure
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import logo from '../Assets/logo.png';
+import logo from '../Assets/logosmall.png';
 
 function Navbar() {
     const { isOpen, onOpen, onClose } = useDisclosure();
