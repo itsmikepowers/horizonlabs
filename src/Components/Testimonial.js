@@ -73,7 +73,7 @@ function Testimonial() {
         ref={testimonialRef}
         opacity={testimonialInView ? 1 : 0}
         transition="opacity 1s ease-out"
-        bg="#202987"
+        background="linear-gradient(to bottom right, #202987, #151a54)"
         w={containerWidth}
         maxW="800px"
         p={textBoxPadding}
@@ -118,7 +118,7 @@ function Testimonial() {
             height={buttonHeight}
             padding={buttonPadding}
             flex="1"
-            bg="#202987"
+            background="linear-gradient(to bottom right, #202987, #151a54)"
             color="white"
             fontSize="xl"
             textAlign={buttonTextAlign}

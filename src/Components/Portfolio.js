@@ -1,6 +1,13 @@
 import React from 'react';
 import { Box, VStack, Heading, Image, useBreakpointValue, Button } from '@chakra-ui/react';
 import { useInView } from 'react-intersection-observer';
+import company1 from '../Assets/company1.png';
+import company2 from '../Assets/company1.png';
+import company3 from '../Assets/company1.png';
+import company4 from '../Assets/company1.png';
+import company5 from '../Assets/company1.png';
+import company6 from '../Assets/company1.png';
+
 
 const Portfolio = () => {
   return (
@@ -35,12 +42,12 @@ const Portfolio = () => {
         zIndex={5}
         justifyContent="center"
       >
-        <BoxItem imageSrc="https://via.placeholder.com/300" />
-        <BoxItem imageSrc="https://via.placeholder.com/300" />
-        <BoxItem imageSrc="https://via.placeholder.com/300" />
-        <BoxItem imageSrc="https://via.placeholder.com/300" />
-        <BoxItem imageSrc="https://via.placeholder.com/300" />
-        <BoxItem imageSrc="https://via.placeholder.com/300" />
+        <BoxItem imageSrc={company1} linkUrl="https://acaoffice.com" />
+        <BoxItem imageSrc={company2} linkUrl="https://link2.example.com" />
+        <BoxItem imageSrc={company3} linkUrl="https://link3.example.com" />
+        <BoxItem imageSrc={company4} linkUrl="https://link4.example.com" />
+        <BoxItem imageSrc={company5} linkUrl="https://link5.example.com" />
+        <BoxItem imageSrc={company6} linkUrl="https://link6.example.com" />
       </Box>
 
       <Button 
@@ -57,7 +64,7 @@ const Portfolio = () => {
   );
 };
 
-const BoxItem = ({ imageSrc }) => {
+const BoxItem = ({ imageSrc, linkUrl }) => {
   const [ref, inView] = useInView({
     threshold: 0.2,
     triggerOnce: true,
@@ -78,14 +85,16 @@ const BoxItem = ({ imageSrc }) => {
       _hover={{ transform: "scale(1.07)", zIndex: 10, boxShadow: "10px 10px 15px rgba(0, 0, 0, 0.2)" }}
       backgroundColor="#202987"
       borderRadius="20px"
-      padding="50px"
+      padding="0"
       alignItems="center"
       spacing={4}
       width={boxSize}
       height={boxSize}
       zIndex={1}
     >
-      <Image src={imageSrc} alt="Placeholder" borderRadius="10px" boxSize="100%" objectFit="cover" />
+      <a href={linkUrl} target="_blank" rel="noopener noreferrer">
+        <Image src={imageSrc} alt="Company Image" borderRadius="10px" width="100%" height="100%" objectFit="cover" />
+      </a>
     </VStack>
   );
 };
