@@ -1,12 +1,12 @@
 import React from 'react';
 import { Box, VStack, Heading, Image, useBreakpointValue, Button } from '@chakra-ui/react';
 import { useInView } from 'react-intersection-observer';
-import company1 from '../Assets/company1.png';
-import company2 from '../Assets/company1.png';
-import company3 from '../Assets/company1.png';
-import company4 from '../Assets/company1.png';
-import company5 from '../Assets/company1.png';
-import company6 from '../Assets/company1.png';
+import company1 from '../Assets/port1.jpg';
+import company2 from '../Assets/port2.jpg';
+import company3 from '../Assets/port3.jpg';
+import company4 from '../Assets/port4.jpg';
+import company5 from '../Assets/port5.jpg';
+import company6 from '../Assets/port6.jpg';
 
 
 const Portfolio = () => {

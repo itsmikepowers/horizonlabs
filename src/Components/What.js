@@ -1,5 +1,6 @@
 import { Box, Image, Center, Text, Heading, useBreakpointValue } from "@chakra-ui/react";
 import { useInView } from 'react-intersection-observer';
+import ball from '../Assets/ball.gif'
 
 function What() {
 
@@ -98,7 +99,7 @@ function What() {
           
           {/* Right Section */}
           <Box width={{ base: "100%", md: "60%" }} padding="20px" marginTop={{ base: "20px", md: "0" }}>
-            <Image src="https://via.placeholder.com/150" alt="Stock Photo" width="100%" borderRadius="5px"/>
+            <Image src={ball} alt="Stock Photo" width="100%" borderRadius="5px"/>
           </Box>
         </Box>
       </Box>
