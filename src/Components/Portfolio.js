@@ -19,6 +19,7 @@ const Portfolio = () => {
       display="flex" 
       flexDirection="column" 
       alignItems="center" 
+      id="portfolio"
     >
       {/* Header */}
       <Heading as="h1" color="white" size="2xl" textAlign="center" marginX="auto" maxWidth="1000px">

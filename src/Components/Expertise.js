@@ -11,6 +11,7 @@ const Expertise = () => {
       width="100%"
       paddingY="50px"
       zIndex={5}
+      id="services"
     >
       <Heading as="h1" color="white" size="2xl" textAlign="center" marginX="auto" maxWidth="1000px">
         Our Expertise

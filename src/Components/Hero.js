@@ -47,21 +47,23 @@ const Hero = () => {
                   Websites, Automation, and AI <br /> To Supercharge Your Business
                 </Text>
                 <Flex mt={4} spacing={4}>
+                <a href="#services">
                   <Button 
-                    color="white" 
-                    variant="outline" 
-                    border="2px solid white" 
-                    size="lg" 
-                    mr={5} 
-                    borderRadius="20px"
-                    transition="transform 0.3s, background-color 0.3s" 
-                    _hover={{
-                      color: "black",
-                      transform: "scale(1.1)",
-                      backgroundColor: "white"
-                    }}>
-                    Services
+                      color="white" 
+                      variant="outline" 
+                      border="2px solid white" 
+                      size="lg" 
+                      mr={5} 
+                      borderRadius="20px"
+                      transition="transform 0.3s, background-color 0.3s" 
+                      _hover={{
+                          color: "black",
+                          transform: "scale(1.1)",
+                          backgroundColor: "white"
+                      }}>
+                      Services
                   </Button>
+</a>
                   <Button 
                     color="white" 
                     variant="solid" 

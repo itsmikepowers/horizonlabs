@@ -6,17 +6,20 @@ const TESTIMONIAL_DATA = [
   {
     text: "\"Working with the team has been a transformative experience. The dedication and expertise here are unparalleled, and it has allowed us to tackle challenges head-on.\"",
     name: "Kathy Powers",
-    position: "Software Engineer"
+    position: "Software Engineer",
+    color: "#ff9050"
   },
   {
     text: "\"The collaboration and vision of this company are what sets it apart. Every project is an opportunity, and with the team's support, success is always within reach.\"",
     name: "John Doe",
-    position: "Product Manager"
+    position: "Product Manager",
+    color: "#25b6f2"
   },
   {
     text: "\"In the realm of design, it's rare to find a place that values innovation and user experience equally. Here, I've found a balance that drives excellence in every project.\"",
     name: "Test Person", 
-    position: "UI/UX Designer"
+    position: "UI/UX Designer",
+    color: "#fb4f59"
   }
 ];
 
@@ -63,7 +66,7 @@ function Testimonial() {
   });
 
   return (
-    <Flex direction="column" align="center" justify="center" h={containerHeight} bg="transparent">
+    <Flex direction="column" align="center" justify="center" h={containerHeight} bg="transparent" id="testimonal">
 
       <Heading as="h1" color="white" size="2xl" textAlign="center" mb="50px">
         Testimonials
@@ -113,7 +116,8 @@ function Testimonial() {
           <Button
             ref={personRef}
             opacity={personInView ? 1 : 0}
-            transition="opacity 1s ease-out"
+            transition="opacity 1s ease-out, transform 0.3s ease-out, box-shadow 0.2s ease-out"
+            _hover={{ transform: "scale(1.07)", zIndex: 10, boxShadow: "10px 10px 15px rgba(0, 0, 0, 0.2)" }}
             key={testimonial.name} 
             height={buttonHeight}
             padding={buttonPadding}
@@ -125,12 +129,11 @@ function Testimonial() {
             justifyContent="center"
             borderRadius="20px"
             onClick={() => setCurrentTestimonial(testimonial)}
-            _hover={{ bg: "#3a31a9" }}
             mt="20px"
           >
 
             <Flex flexDir="column">  
-              <Text fontWeight="bold" fontSize="lg">{testimonial.name}</Text> 
+              <Text fontWeight="bold" fontSize="lg" color={testimonial.color}>{testimonial.name}</Text> 
               <Text color="white" fontWeight= "medium" fontSize="lg">{testimonial.position}</Text> 
             </Flex>
 

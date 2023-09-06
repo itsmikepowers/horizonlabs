@@ -23,7 +23,7 @@ function What() {
   const flexDirection = useBreakpointValue({ base: "column", md: "row" });
 
   return (
-    <Center minHeight="100vh" backgroundColor="transparent">
+    <Center minHeight="100vh" backgroundColor="transparent" id="about">
       <Box zIndex={10} display="flex" flexDirection="column" alignItems="center" maxWidth="1000px" width="100%">
         
         {/* Header */}

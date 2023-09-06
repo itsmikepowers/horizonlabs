@@ -93,13 +93,13 @@ function Navbar() {
                         backdropFilter="blur(5px)" 
                         zIndex={9000} 
                     >
-                        <Link href="#What-you-get" fontWeight="medium" fontSize="xl">About</Link>
+                        <Link href="#about" fontWeight="medium" fontSize="xl">About</Link>
                         <Box width="30px" />
-                        <Link href="#Pricing" fontWeight="medium" fontSize="xl">Services</Link> 
+                        <Link href="#services" fontWeight="medium" fontSize="xl">Services</Link> 
                         <Box width="30px" />
-                        <Link href="#last-projects" fontWeight="medium" fontSize="xl">Portfolio</Link> 
+                        <Link href="#portfolio" fontWeight="medium" fontSize="xl">Portfolio</Link> 
                         <Box width="30px" />
-                        <Link href="#Testimonial" fontWeight="medium" fontSize="xl">Testimonial</Link> 
+                        <Link href="#testimonal" fontWeight="medium" fontSize="xl">Testimonial</Link> 
                     </Flex>
                 </Flex>
 
@@ -129,10 +129,10 @@ function Navbar() {
                     transition="opacity 0.3s ease" // This will make it fade in/out smoothly
                     pointerEvents={isOpen ? "auto" : "none"} // Disable events when the menu isn't visible
                 >
-                    <Link href="#What-you-get" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>About</Link>
-                    <Link href="#Pricing" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>Services</Link>
-                    <Link href="#last-projects" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>Portfolio</Link>
-                    <Link href="#Testimonial" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>Testimonial</Link>
+                    <Link href="#about" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>About</Link>
+                    <Link href="#services" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>Services</Link>
+                    <Link href="#portfolio" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>Portfolio</Link>
+                    <Link href="#testimonal" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>Testimonial</Link>
                     <Button as="a" target="_blank" colorScheme="blue" size="xl" borderRadius="20px" fontSize="xl" p={4} onClick={onClose}> 
                         Contact
                     </Button>
