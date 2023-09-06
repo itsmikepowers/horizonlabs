@@ -68,6 +68,20 @@ const BackgroundComponent = ({ children }) => {
           top="15%"
           left="40%"
         />
+        <ColoredCircle
+          width="1900px"
+          height="1900px"  
+          initialColor="#fb4f59"
+          top="-10%"
+          left="-10%"
+        />
+        <ColoredCircle  
+          width="1500px"
+          height="1500px"
+          initialColor="#ff9050"
+          top="-10%"
+          left="110%"
+        />
       </Box>
       <Box zIndex={3}>
         {children}

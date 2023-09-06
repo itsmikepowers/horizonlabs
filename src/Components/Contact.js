@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import {
   Box,
   Heading,
@@ -12,6 +13,35 @@ import {
 import buttonBackground from '../Assets/button.jpg';
 
 function Contact() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const payload = {
+      name, email, message,
+    };
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if(response.ok) {
+        alert('Email sent successfully!');
+        setName(''); setEmail(''); setMessage(''); // Clear the form
+      } else {
+        alert('Error sending email. Please try again.');
+      }
+    } catch (error) {
+      alert('Failed to send email. Please try again later.');
+    }
+  };
+
   return (
     <Box py="100px" bg="transparent" width="100%">
       <Container maxW="1200px">
@@ -64,6 +94,7 @@ function Contact() {
             <Input bg="white" placeholder="Email" type="email" size="md" />
             <Textarea bg="white" placeholder="Your message..." size="md" resize="none" />
             <Button 
+              onClick={handleSubmit}
               width="100%"
               color="white" 
               variant="outline" 

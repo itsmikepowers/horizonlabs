@@ -6,19 +6,19 @@ const TESTIMONIAL_DATA = [
   {
     text: "\"Working with the team has been a transformative experience. The dedication and expertise here are unparalleled, and it has allowed us to tackle challenges head-on.\"",
     name: "Kathy Powers",
-    position: "Software Engineer",
+    position: "Business Owner @ ACA",
     color: "#ff9050"
   },
   {
     text: "\"The collaboration and vision of this company are what sets it apart. Every project is an opportunity, and with the team's support, success is always within reach.\"",
-    name: "John Doe",
-    position: "Product Manager",
+    name: "Frank Middleton",
+    position: "HR Manager @ Ripple",
     color: "#25b6f2"
   },
   {
     text: "\"In the realm of design, it's rare to find a place that values innovation and user experience equally. Here, I've found a balance that drives excellence in every project.\"",
-    name: "Test Person", 
-    position: "UI/UX Designer",
+    name: "Liam Duncan", 
+    position: "Freelancer",
     color: "#fb4f59"
   }
 ];

@@ -15,16 +15,18 @@ import './App.css';
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <BackgroundComponent>
-        <Navbar />
-        <Hero />
-        <What />
-        <Expertise />
-        <Portfolio />
-        <Testimonial />
-        <Contact />
-        <Horizon />
-      </BackgroundComponent>
+        <BackgroundComponent>
+          <Navbar />
+          <div className="app-scale">
+            <Hero />
+            <What />
+            <Expertise />
+            <Portfolio />
+            <Testimonial />
+            <Contact />
+            <Horizon />
+          </div>
+        </BackgroundComponent>
     </ChakraProvider>
   );
 }

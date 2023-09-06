@@ -6,7 +6,7 @@ const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const stackWidth = useBreakpointValue({ base: "90%", sm: "70%", md: "50%", lg: "40%" });
-  const stackHeight = useBreakpointValue({ base: "70vh", sm: "70vh", md: "80vh", lg: "80vh" });
+  const stackHeight = useBreakpointValue({ base: "65vh", sm: "65vh", md: "75vh", lg: "75vh" });
   const headingSize = useBreakpointValue({ base: "4xl", sm: "4xl", md: "5xl", lg: "5xl" });
   const textSize = useBreakpointValue({ base: "xl", sm: "xl", md: "2xl", lg: "2xl" });
 

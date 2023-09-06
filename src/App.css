@@ -2,6 +2,17 @@ html {
     scroll-behavior: smooth;
 }
 
+@media (min-width: 2000px) {
+  .app-scale {
+      transform: scale(1.3);
+      transform-origin: top center;
+      width: 76.95%;
+      margin-left: auto;
+      margin-right: auto; 
+  }
+}
+
+
 .background-component {
     position: relative;
   }
@@ -16,5 +27,6 @@ html {
     background: linear-gradient(to bottom, rgba(21, 26, 84, 0) 50%, #151a54);
     z-index: 1;
   }
+
   
   

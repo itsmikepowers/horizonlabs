@@ -51,6 +51,7 @@ function Navbar() {
                     boxShadow="0px 4px 10px rgba(0,0,0,0.1)"
                     borderRadius="20px"
                     backdropFilter="blur(5px)" 
+                    
                 >
                     <Flex alignItems="center">
                         <Link href="/" aria-label="home">

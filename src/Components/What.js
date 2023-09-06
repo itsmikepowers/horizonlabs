@@ -53,8 +53,8 @@ function What() {
                 flexDirection="column" 
                 justifyContent="center" 
                 alignItems="flex-start">
-                <Heading size="md" fontWeight="bold" color="white">Async process</Heading>
-                <Text color="gray.200">No meetings. We’ve been working for 5 years with clients without a single meeting. It works.</Text>
+                <Heading size="md" fontWeight="bold" color="white">Digital Development</Heading>
+                <Text color="gray.200">Websites, Apps, Startup MVP's, Automations and AI, we can build any solution to fit your business.</Text>
             </Box>
 
             {/* Green Box */}
@@ -73,8 +73,8 @@ function What() {
                 flexDirection="column" 
                 justifyContent="center" 
                 alignItems="flex-start">
-                <Heading size="md" fontWeight="bold" color="white">Manage with Trello</Heading>
-                <Text color="gray.200">Trello allows you to view all active, queued, and completed tasks with convenience.</Text>
+                <Heading size="md" fontWeight="bold" color="white">Custom Solutions</Heading>
+                <Text color="gray.200">Everything we build is fully custom, crafted to perfection, to ensure the highest quality product possible.</Text>
             </Box>
 
             {/* Red Box */}
@@ -92,8 +92,8 @@ function What() {
                 flexDirection="column" 
                 justifyContent="center" 
                 alignItems="flex-start">
-                <Heading size="md" fontWeight="bold" color="white">Unlimited team members</Heading>
-                <Text color="gray.200">Invite and enable them to submit design requests and track their progress.</Text>
+                <Heading size="md" fontWeight="bold" color="white">Unlimited Building</Heading>
+                <Text color="gray.200">We dont rest until your happy, making sure everything is pixel perfect.</Text>
             </Box>
           </Box>
           

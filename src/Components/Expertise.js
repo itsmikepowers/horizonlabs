@@ -30,17 +30,17 @@ const Expertise = () => {
         <BoxItem
           icon={<ReactIcon boxSize={8} color="#ff9050" />}
           label="Web Development"
-          description="Our team blends cutting-edge technologies with their vast experience to craft websites that are both visually appealing and functionally robust."
+          description="We blend cutting edge tech with advanced development techniques to bring you the highest quality website, App, Startup MVP or AI Solution."
         />
         <BoxItem
           icon={<AiOutlineRobot size="2em" color="#25b6f2" />}
           label="AI Automation"
-          description="We design our AI solutions not just for automation, but to drive innovation and strategic insights."
+          description="Our solutions are fully custom and excellerated with AI, making development faster and more efficient than ever."
         />
         <BoxItem
           icon={<EditIcon boxSize={8} color="#fb4f59" />}
           label="Design Services"
-          description="Great design tells a story. Our team is dedicated to translating this into designs that captivate and resonate."
+          description="Great design is the forefront of our business. We know that great products are intutive, easy to use, visually stunning."
         />
         <BoxItem
           icon={<LockIcon boxSize={8} color="#8013ac" />}
