@@ -90,9 +90,9 @@ function Contact() {
             flex="1" // Take up equal space
             alignItems="start"
           >
-            <Input bg="white" placeholder="Name" size="md" />
-            <Input bg="white" placeholder="Email" type="email" size="md" />
-            <Textarea bg="white" placeholder="Your message..." size="md" resize="none" />
+            <Input bg="white" color="black" placeholder="Name" size="md" />
+            <Input bg="white" color="black" placeholder="Email" type="email" size="md" />
+            <Textarea bg="white" color="black" placeholder="Your message..." size="md" resize="none" />
             <Button 
               onClick={handleSubmit}
               width="100%"
