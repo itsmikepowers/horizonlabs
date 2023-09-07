@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, VStack, Heading, Image, useBreakpointValue, Button } from '@chakra-ui/react';
+import { Box, VStack, Heading, Image, Button } from '@chakra-ui/react';
 import { useInView } from 'react-intersection-observer';
 import company1 from '../Assets/port1.jpg';
 import company2 from '../Assets/port2.jpg';
@@ -8,7 +8,6 @@ import company4 from '../Assets/port4.jpg';
 import company5 from '../Assets/port5.jpg';
 import company6 from '../Assets/port6.jpg';
 
-
 const Portfolio = () => {
   return (
     <Box
@@ -16,9 +15,9 @@ const Portfolio = () => {
       width="100%"
       paddingY="50px"
       zIndex={5}
-      display="flex" 
-      flexDirection="column" 
-      alignItems="center" 
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
       id="portfolio"
     >
       {/* Header */}
@@ -29,10 +28,10 @@ const Portfolio = () => {
       <Box
         display="grid"
         gridTemplateColumns={[
-          "1fr",           // 1 column for smallest screens
-          "repeat(2, 1fr)", // 2 columns for slightly larger screens
-          "repeat(3, 1fr)", // 3 columns for medium and large screens
-          "repeat(3, 1fr)"  // Same as above for extra large screens
+          "1fr",
+          "repeat(2, 1fr)",
+          "repeat(3, 1fr)",
+          "repeat(3, 1fr)"
         ]}
         gap={10}
         maxWidth="1000px"
@@ -71,13 +70,6 @@ const BoxItem = ({ imageSrc, linkUrl }) => {
     triggerOnce: true,
   });
 
-  // Define the box size based on the breakpoint
-  const boxSize = useBreakpointValue({
-    base: '100%',   // Full width for smallest screens
-    md: '100%',     // Full width when there are 2 columns
-    lg: '100%'      // Full width when there are 3 columns
-  });
-
   return (
     <VStack
       ref={ref}
@@ -89,12 +81,10 @@ const BoxItem = ({ imageSrc, linkUrl }) => {
       padding="0"
       alignItems="center"
       spacing={4}
-      width={boxSize}
-      height={boxSize}
       zIndex={1}
     >
       <a href={linkUrl} target="_blank" rel="noopener noreferrer">
-        <Image src={imageSrc} alt="Company Image" borderRadius="10px" width="100%" height="100%" objectFit="cover" />
+        <Image src={imageSrc} alt="Company Image" borderRadius="10px" objectFit="cover" width="100%" />
       </a>
     </VStack>
   );
