@@ -1,3 +1,4 @@
+import React, { useState } from 'react'; // Import useState
 import {
   Box,
   Heading,
@@ -12,6 +13,18 @@ import {
 import buttonBackground from '../Assets/button.jpg';
 
 function Contact() {
+  // Define state to hold input values
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSendEmail = () => {
+    // Construct the mailto link
+    const mailtoLink = `mailto:mikepowersofficial@gmail.com?subject=Contact from ${name} (${email})&body=${message}`;
+    // Redirect to the mailto link
+    window.location.href = mailtoLink;
+  };
+
   return (
     <Box py="100px" bg="transparent" width="100%">
       <Container maxW="1200px">
@@ -32,25 +45,28 @@ function Contact() {
               Let's Get In Touch
             </Heading>
             <Text color="gray.200">
-              To explore how AI and automation can revolutionize your business, set up a time to chat or send us a message!
+              To explore how we can develop websites, AI and automation for your business, set up a time to chat or send us a message! <br /><br /> Send me an email! mikepowersofficial@gmail.com
             </Text>
-            <Button 
-                color="white" 
-                variant="solid" 
-                size="lg" 
-                borderRadius="20px"
-                style={{
-                    backgroundImage: `url(${buttonBackground})`,
-                    backgroundSize: '120%',
-                    backgroundPosition: 'center',
-                }}
-                transition="transform 0.3s" 
-                _hover={{
-                    transform: "scale(1.1)",
-                }}
-            >
-                Let's Talk
-            </Button>
+            <a href="https://calendly.com/horizonlabsai/discovery-call" target="_blank" rel="noopener noreferrer">
+              <Button 
+                  color="white" 
+                  variant="solid" 
+                  size="lg" 
+                  borderRadius="20px"
+                  style={{
+                      backgroundImage: `url(${buttonBackground})`,
+                      backgroundSize: '120%',
+                      backgroundPosition: 'center',
+                  }}
+                  transition="transform 0.3s" 
+                  _hover={{
+                      transform: "scale(1.1)",
+                  }}
+              >
+                  Let's Talk
+              </Button>
+          </a>
+
           </VStack>
 
           {/* Right Side - Contact Form */}
@@ -60,9 +76,32 @@ function Contact() {
             flex="1" // Take up equal space
             alignItems="start"
           >
-            <Input color="black" bg="white" placeholder="Name" size="md" />
-            <Input color="black" bg="white" placeholder="Email" type="email" size="md" />
-            <Textarea color="black" bg="white" placeholder="Your message..." size="md" resize="none" />
+            <Input 
+                color="black" 
+                bg="white" 
+                placeholder="Name" 
+                size="md" 
+                value={name} 
+                onChange={(e) => setName(e.target.value)} // Bind value and onChange
+            />
+            <Input 
+                color="black" 
+                bg="white" 
+                placeholder="Email" 
+                type="email" 
+                size="md" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)} // Bind value and onChange
+            />
+            <Textarea 
+                color="black" 
+                bg="white" 
+                placeholder="Your message..." 
+                size="md" 
+                resize="none" 
+                value={message}
+                onChange={(e) => setMessage(e.target.value)} // Bind value and onChange
+            />
             <Button 
               width="100%"
               color="white" 
@@ -74,7 +113,9 @@ function Contact() {
                 transform: "scale(1.05)",
                 backgroundColor: "#0dd110",
                 border: "none"
-              }}>
+              }}
+              onClick={handleSendEmail} // Add onClick event to handle the email sending
+            >
               Submit
             </Button>
           </VStack>

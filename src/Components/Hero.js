@@ -63,23 +63,26 @@ const Hero = () => {
                       }}>
                       Services
                   </Button>
-</a>
-                  <Button 
-                    color="white" 
-                    variant="solid" 
-                    size="lg" 
-                    borderRadius="20px"
-                    style={{
-                      backgroundImage: `url(${buttonBackground})`,
-                      backgroundSize: '120%',
-                      backgroundPosition: 'center',
-                    }}
-                    transition="transform 0.3s" 
-                    _hover={{
-                      transform: "scale(1.1)",
-                    }}>
-                    Let's Talk
-                  </Button>
+                  </a>
+                  <a href="https://calendly.com/horizonlabsai/discovery-call" target="_blank" rel="noopener noreferrer">
+                    <Button 
+                      color="white" 
+                      variant="solid" 
+                      size="lg" 
+                      borderRadius="20px"
+                      style={{
+                        backgroundImage: `url(${buttonBackground})`,
+                        backgroundSize: '120%',
+                        backgroundPosition: 'center',
+                      }}
+                      transition="transform 0.3s" 
+                      _hover={{
+                        transform: "scale(1.1)",
+                      }}>
+                      Let's Talk
+                    </Button>
+                  </a>
+
                 </Flex>
               </VStack>
             </Center>
