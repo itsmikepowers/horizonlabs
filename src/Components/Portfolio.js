@@ -43,7 +43,7 @@ const Portfolio = () => {
         justifyContent="center"
       >
         <BoxItem imageSrc={company1} linkUrl="https://acaoffice.com" />
-        <BoxItem imageSrc={company2} linkUrl="https://mikepowers.io" />
+        <BoxItem imageSrc={company2} linkUrl="https://crmarketing-horizon.vercel.app" />
         <BoxItem imageSrc={company3} linkUrl="https://jasonsautomation.vercel.app/" />
         <BoxItem imageSrc={company4} linkUrl="https://onlycanva.com" />
         <BoxItem imageSrc={company5} linkUrl="https://royal-oak-horizon.vercel.app/" />
