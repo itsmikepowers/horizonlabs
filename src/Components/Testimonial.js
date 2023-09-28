@@ -6,7 +6,7 @@ const TESTIMONIAL_DATA = [
   {
     text: "\"Working with the team has been a transformative experience. The dedication and expertise here are unparalleled, and it has allowed us to tackle challenges head-on.\"",
     name: "Kathy Powers",
-    position: "Business Owner @ ACA",
+    position: "Business Administrator @ ACA",
     color: "#ff9050"
   },
   {
