@@ -18,12 +18,25 @@ function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSendEmail = () => {
-    // Construct the mailto link
-    const mailtoLink = `mailto:mikepowersofficial@gmail.com?subject=Contact from ${name} (${email})&body=${message}`;
-    // Redirect to the mailto link
-    window.location.href = mailtoLink;
-  };
+// In your React component
+const handleSendEmail = () => {
+  // Send a POST request to the serverless function
+  fetch('/api/send-email', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      name: name,
+      email: email,
+      message: message,
+    }),
+  })
+  .then(response => response.text())
+  .then(text => alert(text))
+  .catch(error => alert('Error sending email.'));
+};
+
 
   return (
     <Box py="100px" bg="transparent" width="100%">
