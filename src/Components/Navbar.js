@@ -104,18 +104,24 @@ function Navbar() {
                 </Flex>
 
                 <Box ml={3} display={{ base: "none", lg: "block" }}>
-                    <Button 
-                        as="a" 
-                        href="https://calendly.com/horizonlabsai/discovery-call" // Updated href here
-                        target="_blank" 
-                        colorScheme="blue" 
-                        size="xl" 
-                        borderRadius="20px" 
-                        fontSize="xl" 
-                        p={4}
-                    > 
-                        Contact
-                    </Button>
+                    <Link 
+                        href="https://calendly.com/horizonlabsai/discovery-call" 
+                        isExternal
+                        _hover={{
+                            textDecoration: 'none', // To remove underline on hover
+                        }}
+                    >
+                        <Button 
+                            colorScheme="blue" 
+                            zIndex="10000"
+                            size="xl" 
+                            borderRadius="20px" 
+                            fontSize="xl" 
+                            p={4}
+                        > 
+                            Contact
+                        </Button>
+                    </Link>
                 </Box>
 
                 {/* Mobile Menu */}
@@ -142,19 +148,24 @@ function Navbar() {
                     <Link href="#services" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>Services</Link>
                     <Link href="#portfolio" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>Portfolio</Link>
                     <Link href="#testimonal" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>Testimonial</Link>
-                    <Button 
-                        as="a" 
-                        href="https://calendly.com/horizonlabsai/discovery-call" // Updated href here
-                        target="_blank" 
-                        colorScheme="blue" 
-                        size="xl" 
-                        borderRadius="20px" 
-                        fontSize="xl" 
-                        p={4} 
-                        onClick={onClose}
-                    > 
-                        Contact
-                    </Button>
+                    <Link 
+                        href="https://calendly.com/horizonlabsai/discovery-call" 
+                        isExternal
+                        _hover={{
+                            textDecoration: 'none', // To remove underline on hover
+                        }}
+                    >
+                        <Button 
+                            colorScheme="blue" 
+                            zIndex="10000"
+                            size="xl" 
+                            borderRadius="20px" 
+                            fontSize="xl" 
+                            p={4}
+                        > 
+                            Contact
+                        </Button>
+                    </Link>
                 </Flex>
             </Flex>
         </Box>
