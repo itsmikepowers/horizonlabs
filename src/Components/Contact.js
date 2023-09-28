@@ -20,6 +20,15 @@ function Contact() {
 
 // In your React component
 const handleSendEmail = () => {
+  // Regular expression for basic email validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // Validate email
+  if (!emailRegex.test(email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
   // Send a POST request to the serverless function
   fetch('/api/send-email', {
     method: 'POST',
@@ -34,7 +43,7 @@ const handleSendEmail = () => {
   })
   .then(response => {
     // Check if the response is successful
-    if(response.ok) {
+    if (response.ok) {
       // Clear the input fields
       setName("");
       setEmail("");
@@ -47,6 +56,7 @@ const handleSendEmail = () => {
   .then(text => alert(text))
   .catch(error => alert(error.message));
 };
+
 
   return (
     <Box py="100px" bg="transparent" width="100%">
