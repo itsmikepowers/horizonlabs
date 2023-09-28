@@ -104,7 +104,16 @@ function Navbar() {
                 </Flex>
 
                 <Box ml={3} display={{ base: "none", lg: "block" }}>
-                    <Button as="a" target="_blank" colorScheme="blue" size="xl" borderRadius="20px" fontSize="xl" p={4}> 
+                    <Button 
+                        as="a" 
+                        href="https://calendly.com/horizonlabsai/discovery-call" // Updated href here
+                        target="_blank" 
+                        colorScheme="blue" 
+                        size="xl" 
+                        borderRadius="20px" 
+                        fontSize="xl" 
+                        p={4}
+                    > 
                         Contact
                     </Button>
                 </Box>
@@ -133,7 +142,17 @@ function Navbar() {
                     <Link href="#services" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>Services</Link>
                     <Link href="#portfolio" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>Portfolio</Link>
                     <Link href="#testimonal" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>Testimonial</Link>
-                    <Button as="a" target="_blank" colorScheme="blue" size="xl" borderRadius="20px" fontSize="xl" p={4} onClick={onClose}> 
+                    <Button 
+                        as="a" 
+                        href="https://calendly.com/horizonlabsai/discovery-call" // Updated href here
+                        target="_blank" 
+                        colorScheme="blue" 
+                        size="xl" 
+                        borderRadius="20px" 
+                        fontSize="xl" 
+                        p={4} 
+                        onClick={onClose}
+                    > 
                         Contact
                     </Button>
                 </Flex>
