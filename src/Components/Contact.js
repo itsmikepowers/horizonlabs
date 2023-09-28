@@ -32,11 +32,21 @@ const handleSendEmail = () => {
       message: message,
     }),
   })
-  .then(response => response.text())
+  .then(response => {
+    // Check if the response is successful
+    if(response.ok) {
+      // Clear the input fields
+      setName("");
+      setEmail("");
+      setMessage("");
+      return response.text();
+    } 
+    // If response is not successful, throw an error
+    throw new Error('Error sending email.');
+  })
   .then(text => alert(text))
-  .catch(error => alert('Error sending email.'));
+  .catch(error => alert(error.message));
 };
-
 
   return (
     <Box py="100px" bg="transparent" width="100%">
