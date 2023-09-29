@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import logo from '../Assets/logosmall.png';
+import { Link as RouterLink } from 'react-router-dom';
 
 function Navbar() {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -96,6 +97,16 @@ function Navbar() {
                         <Link href="#about" fontWeight="medium" fontSize="xl">About</Link>
                         <Box width="30px" />
                         <Link href="#services" fontWeight="medium" fontSize="xl">Services</Link> 
+                        <Box width="30px" />
+                        <RouterLink to="/blog">
+                            <Text 
+                            fontWeight="medium" 
+                            fontSize="xl"
+                            _hover={{ textDecoration: 'underline' }}  // Add this line
+                            >
+                            Blog
+                            </Text>
+                        </RouterLink>
                         <Box width="30px" />
                         <Link href="#portfolio" fontWeight="medium" fontSize="xl">Portfolio</Link> 
                         <Box width="30px" />

@@ -9,25 +9,51 @@ import Portfolio from './Components/Portfolio';
 import Hero from './Components/Hero';
 import Testimonial from './Components/Testimonial';
 import Horizon from './Components/Horizon';
-import BackgroundComponent from './Components/BackgroundComponent';  // Update the path if saved elsewhere
+import BackgroundComponent from './Components/BackgroundComponent';
+import Blog from './Components/Blog/Blog'; 
+import Post from './Components/Blog/Post';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
+import { Analytics } from '@vercel/analytics/react';
+
+function RootLayout({ children }) {
+  return (
+    <>
+      {children}
+      <Analytics />
+    </>
+  );
+}
 
 function App() {
   return (
-    <ChakraProvider theme={theme}>
-        <BackgroundComponent>
-          <Navbar />
-          <div className="app-scale">
-            <Hero />
-            <What />
-            <Expertise />
-            <Portfolio />
-            <Testimonial />
-            <Contact />
-            <Horizon />
-          </div>
-        </BackgroundComponent>
-    </ChakraProvider>
+    <Router>
+      <ChakraProvider theme={theme}>
+        <RootLayout>
+          <Routes>
+            {/* Main Route */}
+            <Route path="/" element={
+              <BackgroundComponent>
+                <Navbar />
+                <div className="app-scale">
+                  <Hero />
+                  <What />
+                  <Expertise />
+                  <Portfolio />
+                  <Testimonial />
+                  <Contact />
+                  <Horizon />
+                </div>
+              </BackgroundComponent>
+            } />
+
+            {/* Blog Route */}
+            <Route path="blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<Post />} /> 
+          </Routes>
+        </RootLayout>
+      </ChakraProvider>
+    </Router>
   );
 }
 
