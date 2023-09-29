@@ -12,6 +12,29 @@ function urlFor(source) {
   return builder.image(source);
 }
 
+// Define custom serializers
+const serializers = {
+  types: {
+    block: (props) => {
+      // Check the style of the block content
+      switch (props.node.style) {
+        case 'h1':
+          return <h1 style={{ fontSize: '2em', margin: '20px 0' }}>{props.children}</h1>;
+        case 'h2':
+          return <h2 style={{ fontSize: '1.5em', margin: '15px 0' }}>{props.children}</h2>;
+        case 'h3':
+          return <h3 style={{ fontSize: '1.3em', margin: '12px 0' }}>{props.children}</h3>;
+        case 'h4':
+          return <h4 style={{ fontSize: '1.2em', margin: '10px 0' }}>{props.children}</h4>;
+        case 'normal':
+          return <p style={{ fontSize: '1.1em', margin: '10px 0',   lineHeight: '1.8' }}>{props.children}</p>;
+        default:
+          return BlockContent.defaultSerializers.types.block(props);
+      }
+    },
+  },
+};
+
 const PostPage = () => {
   const [postData, setPostData] = useState(null);
   const { slug } = useParams();
@@ -30,7 +53,7 @@ const PostPage = () => {
         }`,
         { slug }
       )
-      .then(data => setPostData(data[0]))
+      .then((data) => setPostData(data[0]))
       .catch(console.error);
   }, [slug]);
 
@@ -69,11 +92,12 @@ const PostPage = () => {
           <img
             src={urlFor(postData.mainImage).url()}
             alt={postData.title}
-            style={{ maxWidth: '400px', width: '100%' }}
+            style={{ width: '100%' }}
           />
         )}
         <p>{postData.excerpt}</p>
-        <BlockContent blocks={postData.body} />
+        {/* Pass the custom serializers to the BlockContent component */}
+        <BlockContent blocks={postData.body} serializers={serializers}   style={{ lineHeight: '2' }} />
       </Box>
       <Box width="350px" backgroundColor="gray.200" padding="20px" color="black">
         {/* You can put any content you want in the gray box here */}

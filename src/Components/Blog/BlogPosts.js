@@ -39,7 +39,7 @@ const BlogPosts = () => {
             overflow: 'hidden' 
           }}
         >
-          <div style={{ width: '100%', height: '250px', overflow: 'hidden' }}> {/* Container for the image */}
+          <div style={{ width: '100%', overflow: 'hidden' }}> {/* Container for the image */}
             {post.mainImage && (
               <img 
                 src={urlFor(post.mainImage).url()} 
