@@ -49,7 +49,7 @@ function App() {
 
             {/* Blog Route */}
             <Route path="blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<Post />} /> 
+            <Route path="/:slug" element={<Post />} /> 
           </Routes>
         </RootLayout>
       </ChakraProvider>

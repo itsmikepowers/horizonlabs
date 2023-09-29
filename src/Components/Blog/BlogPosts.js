@@ -27,7 +27,7 @@ const BlogPosts = () => {
     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', margin: 'auto', maxWidth: '800px' }}>
       {posts.map(post => (
         <Link 
-          to={`/blog/${post.slug.current}`}
+          to={`/${post.slug.current}`}
           key={post.slug.current}
           style={{ 
             width: '100%', 
