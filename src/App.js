@@ -16,7 +16,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Analytics } from '@vercel/analytics/react';
 import Category from './Components/Blog/Category';
-
+import ReferralLinks from './Components/ReferralLinks';
 
 
 function RootLayout({ children }) {
@@ -54,6 +54,9 @@ function App() {
             <Route path="blog" element={<Blog />} />
             <Route path="blog/:category" element={<Category />} /> {/* Add this line */}
             <Route path="/:slug" element={<Post />} />
+
+            {/* Referral Links */}
+            <Route path="shopify" element={<ReferralLinks to="https://www.shopify.com?ref=your_referral_code" />} />
           </Routes>
         </RootLayout>
       </ChakraProvider>
