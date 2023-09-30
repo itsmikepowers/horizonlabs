@@ -15,6 +15,9 @@ import Post from './Components/Blog/Post';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Analytics } from '@vercel/analytics/react';
+import Category from './Components/Blog/Category';
+
+
 
 function RootLayout({ children }) {
   return (
@@ -49,7 +52,8 @@ function App() {
 
             {/* Blog Route */}
             <Route path="blog" element={<Blog />} />
-            <Route path="/:slug" element={<Post />} /> 
+            <Route path="blog/:category" element={<Category />} /> {/* Add this line */}
+            <Route path="/:slug" element={<Post />} />
           </Routes>
         </RootLayout>
       </ChakraProvider>

@@ -1,7 +1,7 @@
-// BlogPosts.js
+// CategoryPosts.js
 import React, { useState, useEffect } from 'react';
 import sanityClient from '../../lib/sanityClient';
-import { Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import imageUrlBuilder from '@sanity/image-url';
 
 const builder = imageUrlBuilder(sanityClient);
@@ -9,19 +9,36 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-const BlogPosts = () => {
+// Function to convert a string to title case
+function toTitleCase(str) {
+  return str.replace(/\w\S*/g, function (txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
+}
+
+const CategoryPosts = () => {
   const [posts, setPosts] = useState([]);
+  let { category } = useParams(); // get category from URL
+  category = toTitleCase(category); // convert category to title case
+  console.log("Category from URL:", category);
 
   useEffect(() => {
+    // Start with a simple query to fetch all posts
+    let query = `*[_type == "post"] { title, slug, mainImage, excerpt, body, categories[]->{title} }`;
+    console.log("Query:", query); // Debugging Line
     sanityClient
-      .fetch(
-        '*[_type == "post"] { title, slug, mainImage, excerpt, body, categories[]->{title} }'
-      )
+      .fetch(query)
       .then(data => {
-        setPosts(data);
+        console.log("Fetched Data:", data); // Debugging Line
+
+        // Then filter the posts in JavaScript
+        const filteredPosts = data.filter(post => 
+          post.categories.some(cat => cat.title === category)
+        );
+        setPosts(filteredPosts);
       })
       .catch(console.error);
-  }, []);
+  }, [category]);
 
   return (
     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', margin: 'auto', maxWidth: '800px', paddingTop: '20px', paddingBottom: '20px' }}>
@@ -51,7 +68,7 @@ const BlogPosts = () => {
             <div style={{ color: '#228bf5', textAlign: 'left' }}>
               {post.categories && post.categories.map((category, index, array) => (
                 <span key={category.title}>
-                  <Link to={`/blog/${category.title.toLowerCase()}`} style={{ color: '#228bf5' }}>{category.title}</Link>
+                  <Link to={`/blog/${category.title}`} style={{ color: '#228bf5' }}>{category.title}</Link>
                   {index !== array.length - 1 && <span style={{ color: 'black' }}>, </span>}
                 </span>
               ))}
@@ -65,4 +82,4 @@ const BlogPosts = () => {
   );
 };
 
-export default BlogPosts;
+export default CategoryPosts;

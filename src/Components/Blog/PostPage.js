@@ -19,15 +19,13 @@ const serializers = {
       // Check the style of the block content
       switch (props.node.style) {
         case 'h1':
-          return <h1 style={{ fontSize: '2em', margin: '20px 0' }}>{props.children}</h1>;
+          return <h1 style={{ fontSize: '2em', margin: '15px 0' }}>{props.children}</h1>;
         case 'h2':
-          return <h2 style={{ fontSize: '1.5em', margin: '15px 0' }}>{props.children}</h2>;
+          return <h2 style={{ fontSize: '1.6em', margin: '15px 0' }}>{props.children}</h2>;
         case 'h3':
-          return <h3 style={{ fontSize: '1.3em', margin: '12px 0' }}>{props.children}</h3>;
-        case 'h4':
-          return <h4 style={{ fontSize: '1.2em', margin: '10px 0' }}>{props.children}</h4>;
-        case 'normal':
-          return <p style={{ fontSize: '1.1em', margin: '10px 0',   lineHeight: '1.8' }}>{props.children}</p>;
+          return <h3 style={{ fontSize: '1.6em', margin: '15px 0', color: '#228bf5'  }}>{props.children}</h3>;
+      case 'normal':
+          return <p style={{ fontSize: '1.2em', margin: '15px 0', lineHeight: '1.8' }}>{props.children}</p>;
         default:
           return BlockContent.defaultSerializers.types.block(props);
       }
@@ -37,6 +35,7 @@ const serializers = {
 
 const PostPage = () => {
   const [postData, setPostData] = useState(null);
+  const [loading, setLoading] = useState(true); // Added loading state
   const { slug } = useParams();
 
   useEffect(() => {
@@ -53,11 +52,15 @@ const PostPage = () => {
         }`,
         { slug }
       )
-      .then((data) => setPostData(data[0]))
+      .then((data) => {
+        setPostData(data[0]);
+        setLoading(false); // Set loading to false after fetching the data
+      })
       .catch(console.error);
   }, [slug]);
 
-  if (!postData) return <div style={{ textAlign: 'center', color: 'black' }}>Loading...</div>;
+  // If loading and no postData, return null
+  if (loading && !postData) return null;
 
   // Format the date
   const formattedDate = new Date(postData?.publishedAt).toLocaleDateString("en-US", {
@@ -96,8 +99,7 @@ const PostPage = () => {
           />
         )}
         <p>{postData.excerpt}</p>
-        {/* Pass the custom serializers to the BlockContent component */}
-        <BlockContent blocks={postData.body} serializers={serializers}   style={{ lineHeight: '2' }} />
+        <BlockContent blocks={postData.body} serializers={serializers} style={{ lineHeight: '2' }} />
       </Box>
       <Box width="350px" backgroundColor="gray.200" padding="20px" color="black">
         {/* You can put any content you want in the gray box here */}

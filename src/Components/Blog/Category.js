@@ -1,16 +1,16 @@
-// src/components/Blog.js
+// src/components/Category.js
 import React from 'react';
 import { Box } from '@chakra-ui/react';
 import BlogNavbar from './BlogNavbar';
-import PostPage from './PostPage';
+import CategoryPosts from './CategoryPost';
 
-const Post = () => {
+const Category = () => {
   return (
     <Box bg="white" minHeight="100vh">
       <BlogNavbar />
-      <PostPage />
+      <CategoryPosts />
     </Box>
   );
 };
 
-export default Post;
+export default Category;
