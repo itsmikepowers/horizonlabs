@@ -18,7 +18,6 @@ function Navbar() {
 
     useEffect(() => {
         const handleResize = () => {
-            // If screen width is greater than 992px and mobile menu is open, close it.
             if (window.innerWidth >= 992 && isOpen) {
                 onClose();
             }
@@ -102,7 +101,7 @@ function Navbar() {
                             <Text 
                             fontWeight="medium" 
                             fontSize="xl"
-                            _hover={{ textDecoration: 'underline' }}  // Add this line
+                            _hover={{ textDecoration: 'underline' }}
                             >
                             Blog
                             </Text>
@@ -119,7 +118,7 @@ function Navbar() {
                         href="https://calendly.com/horizonlabsai/discovery-call" 
                         isExternal
                         _hover={{
-                            textDecoration: 'none', // To remove underline on hover
+                            textDecoration: 'none',
                         }}
                     >
                         <Button 
@@ -151,19 +150,29 @@ function Navbar() {
                     borderRadius="20px"
                     alignItems="center"
                     backdropFilter="blur(5px)" 
-                    opacity={isOpen ? 1 : 0} // Control the visibility with opacity
-                    transition="opacity 0.3s ease" // This will make it fade in/out smoothly
-                    pointerEvents={isOpen ? "auto" : "none"} // Disable events when the menu isn't visible
+                    opacity={isOpen ? 1 : 0}
+                    transition="opacity 0.3s ease" 
+                    pointerEvents={isOpen ? "auto" : "none"}
                 >
                     <Link href="#about" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>About</Link>
                     <Link href="#services" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>Services</Link>
+                    <RouterLink to="/blog">
+                        <Text 
+                            fontWeight="bold" 
+                            fontSize="xl"
+                            _hover={{ textDecoration: 'underline' }}
+                            mb={4} 
+                            >
+                            Blog
+                        </Text>
+                    </RouterLink>
                     <Link href="#portfolio" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>Portfolio</Link>
                     <Link href="#testimonal" fontWeight="bold" fontSize="xl" mb={4} onClick={onClose}>Testimonial</Link>
                     <Link 
                         href="https://calendly.com/horizonlabsai/discovery-call" 
                         isExternal
                         _hover={{
-                            textDecoration: 'none', // To remove underline on hover
+                            textDecoration: 'none',
                         }}
                     >
                         <Button 
